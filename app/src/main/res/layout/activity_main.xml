@@ -12,7 +12,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="#5D5E60"
+        android:background="#000000"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,10 +21,10 @@
 
             <ImageView
                 android:id="@+id/top_app_name"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_width="180dp"
+                android:layout_height="100dp"
                 android:contentDescription="@string/app_name"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/logo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,11 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,7 +76,7 @@
                 android:layout_marginStart="16dp"
                 android:text="UpComing"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="22dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="SpUsage" />
@@ -87,6 +91,7 @@
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_upcoming"
                 tools:listitem="@layout/item_upcoming" />
@@ -105,22 +110,6 @@
                 app:layout_constraintTop_toBottomOf="@id/recycler_view_upcoming"
                 tools:ignore="SpUsage" />
 
-            <TextView
-                android:id="@+id/text_view_all_popular"
-                style="@style/TextAppearance.AppCompat.Display1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:padding="4dp"
-                android:text="View All"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/text_popular"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/text_popular"
-                tools:ignore="SpUsage" />
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view_popular"
                 android:layout_width="0dp"
@@ -131,11 +120,49 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_view_all_popular"
+                app:layout_constraintTop_toBottomOf="@id/text_popular"
                 tools:listitem="@layout/item_movie_home" />
 
+            <TextView
+                android:id="@+id/toprated"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Top Rated"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_view_popular" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_toprated"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toprated"
+                tools:listitem="@layout/item_movie_home" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

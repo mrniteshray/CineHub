@@ -12,7 +12,7 @@ import xcom.nitesh.apps.cinehub.Model.Movie
 import xcom.nitesh.apps.cinehub.R
 import xcom.nitesh.apps.cinehub.utils.Constants
 
-class UpcomingRCVAdapter(val context: Context, val movie : List<Movie>) : RecyclerView.Adapter<UpcomingRCVAdapter.UpcomingViewHolder>() {
+class UpcomingRCVAdapter(val context: Context, val movie : List<Movie>, val onClick : (Movie) -> Unit) : RecyclerView.Adapter<UpcomingRCVAdapter.UpcomingViewHolder>() {
 
     class UpcomingViewHolder(itemview : View) : RecyclerView.ViewHolder(itemview){
         val imageView : ImageView = itemview.findViewById(R.id.upcoming_image)
@@ -30,6 +30,10 @@ class UpcomingRCVAdapter(val context: Context, val movie : List<Movie>) : Recycl
             .load(Constants.ImageBaseURLw780+current.backdrop_path)
             .into(holder.imageView)
         holder.textView.text = current.title
+
+        holder.itemView.setOnClickListener {
+            onClick(current)
+        }
     }
 
     override fun getItemCount(): Int {

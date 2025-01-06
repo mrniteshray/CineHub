@@ -13,10 +13,32 @@ class MovieViewModel @Inject constructor(val repository: MovieRepository) : View
     private val _movies = MutableLiveData<List<Movie>>()
     val movie : LiveData<List<Movie>> get() = _movies
 
+    private val _popularmovies = MutableLiveData<List<Movie>>()
+    val popularmovie : LiveData<List<Movie>> get() = _popularmovies
+
+    private val _topratedmovies = MutableLiveData<List<Movie>>()
+    val topratedmovie : LiveData<List<Movie>> get() = _topratedmovies
+
+
+
     fun getUpcomingMoview() {
         viewModelScope.launch {
             val response = repository.getUpcomingMovies()
             _movies.postValue(response?.results)
+        }
+    }
+
+    fun getPopularMovie() {
+        viewModelScope.launch {
+            val response = repository.getPopularMovies()
+            _popularmovies.postValue(response?.results)
+        }
+    }
+
+    fun getTopRatedMovie() {
+        viewModelScope.launch {
+            val response = repository.getTopRatedMovies()
+            _topratedmovies.postValue(response?.results)
         }
     }
 }
