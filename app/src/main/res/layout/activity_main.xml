@@ -30,17 +30,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/bookmarks"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="16dp"
-                android:padding="3dp"
-                android:src="@drawable/baseline_bookmark_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -77,6 +66,7 @@
                 android:text="UpComing"
                 android:textColor="@color/white"
                 android:textSize="22dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="SpUsage" />
@@ -106,6 +96,7 @@
                 android:text="Popular"
                 android:textColor="@color/white"
                 android:textSize="18dp"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recycler_view_upcoming"
                 tools:ignore="SpUsage" />
@@ -133,6 +124,7 @@
                 android:text="Top Rated"
                 android:textColor="@color/white"
                 android:textSize="18dp"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"

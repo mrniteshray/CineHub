@@ -4,15 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main"
-    android:background="#000000"
+    android:background="#ffff"
     tools:context=".ui.detail.DetailActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/posterCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         app:cardCornerRadius="12dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -51,11 +53,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-
         android:layout_marginTop="10dp"
+        android:layout_marginRight="2dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Munjya 2024"
-        android:textColor="@android:color/white"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,32 +88,45 @@
             android:layout_marginEnd="8dp"
             android:paddingLeft="5dp"
             android:text="2004"
-            android:textColor="@android:color/white" />
+            android:textColor="#000000" />
 
     </LinearLayout>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/genreChipGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/aboutMovieTextView"
+        app:layout_constraintTop_toBottomOf="@+id/aboutMovieTextView"
+        app:singleSelection="false">
+
+    </com.google.android.material.chip.ChipGroup>
 
     <TextView
         android:id="@+id/aboutMovieLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="About Movie"
-        android:textColor="@android:color/white"
+        android:text="Description"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movieInfoLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/postcard" />
 
     <TextView
         android:id="@+id/aboutMovieTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:fontFamily="sans-serif-condensed"
         android:padding="5dp"
         android:text="Lorem isem"
-        android:textColor="@android:color/white"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

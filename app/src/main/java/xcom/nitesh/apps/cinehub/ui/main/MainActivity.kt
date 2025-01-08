@@ -26,13 +26,13 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var movieViewModel: MovieViewModel
 
-    lateinit var upcomingRCVAdapter : UpcomingRCVAdapter
-    lateinit var movielist : List<Movie>
+    private lateinit var upcomingRCVAdapter : UpcomingRCVAdapter
+    private lateinit var movielist : List<Movie>
 
-    lateinit var popularRCVAdapter : PopularRCVAdapter
-    lateinit var topratedRCVAdapter : TopRCVAdapter
-    lateinit var popularmoviewlist : List<Movie>
-    lateinit var topratedmoviewlist : List<Movie>
+    private lateinit var popularRCVAdapter : PopularRCVAdapter
+    private lateinit var topratedRCVAdapter : TopRCVAdapter
+    private lateinit var popularmoviewlist : List<Movie>
+    private lateinit var topratedmoviewlist : List<Movie>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,11 +80,14 @@ class MainActivity : AppCompatActivity() {
                 startDetailActivity(movie)
             }
             binding.progressBar.visibility = View.GONE
+            binding.textPopular.visibility = View.VISIBLE
+            binding.toprated.visibility = View.VISIBLE
+            binding.textUpcoming.visibility = View.VISIBLE
             binding.recyclerViewToprated.adapter = topratedRCVAdapter
         })
     }
 
-    fun startDetailActivity(movie : Movie){
+    private fun startDetailActivity(movie : Movie){
         val intent = Intent(this,DetailActivity::class.java)
         intent.putExtra("movie",movie)
         startActivity(intent)
