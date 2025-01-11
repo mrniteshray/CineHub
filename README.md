@@ -1,3 +1,4 @@
+![Banner Image](https://i.postimg.cc/fT2X4g3m/Cine-Hub-Banner.jpg)
 # 🎥 CineHub - A Minimalistic Movie App
 
 CineHub is a minimalistic movie listing app that showcases the latest and popular movies. Built using **The Movie Database (TMDb) API**, it demonstrate MVVM Architecture, Kotlin, Coroutines,Dependency Injection - Hilt, Retrofit.
